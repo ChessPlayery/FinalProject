@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <title>Rain</title> 
+  </head>
+  <body>
+	<!--This draws the canvas on the webpage -->
+    <canvas id="mycanvas"></canvas> 
+  </body>
+ 
+  <!-- Include the processing.js library -->
+  <!-- See https://khanacademy.zendesk.com/hc/en-us/articles/202260404-What-parts-of-ProcessingJS-does-Khan-Academy-support- for differences -->
+  <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script> 
+  <script>
+  var programCode = function(processingInstance) {
+    with (processingInstance) {
+      size(400, 400); 
+      frameRate(30);
+        
+      // Paste code from Khan Academy here:
+      var xPositions = [200];
+var yPositions = [0];
+
+for(var i = 0; i < 100; i++){
+    xPositions.push(random(0,400));
+    yPositions.push(random(0,400));
+}
+
+//RGB for rain color
+var rgb = [0,0,0];
+var increases = [5,7,9];
+
+draw = function() {
+    background(204, 247, 255);
+
+    //change RGB
+    for (var t = 0; t < rgb.length; t++){
+        rgb[t] = rgb[t] + increases[t];
+    }
+    
+    
+    for(var g = 0; g < rgb.length; g++){
+        if((rgb[g] >= 255 && increases[g] > 0) || (rgb[g] <= 0 && increases[g] < 0)){
+            increases[g] = increases[g]*(0-1);
+        }
+    }
+    noStroke();
+    fill(rgb[0],rgb[1],rgb[2]);
+
+    for (var i = 0; i < xPositions.length; i++) {
+        ellipse(xPositions[i], yPositions[i], 10, 10);
+        yPositions[i] += 5;
+    }
+    
+    
+    for (var e = 0; e < yPositions.length ;e++){
+        if(yPositions[e] >= 410){
+            yPositions[e] = 0; //move raindrop to the top again
+            xPositions[e] = random(0,400); //randomize x so the rain isn't the same thing
+        }
+    }
+};
+    }};
+
+  // Get the canvas that ProcessingJS will use
+  var canvas = document.getElementById("mycanvas"); 
+  // Pass the function to ProcessingJS constructor
+  var processingInstance = new Processing(canvas, programCode); 
+  </script>
+  <br></br><a href="index.html">Back to Homepage</a>
+</html>
