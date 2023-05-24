@@ -6,17 +6,41 @@
  </head>
 <body>
   <h1>Epilogue</h1>
-  <img src="rain.png" alt="rain" id="rain-img" height="200px">
+  <img class="rain" src="rain.png" alt="rain" id="rain-img" height="200px">
   <br></br>
-  <a href="khanprogram.html">Watch Rain Animation!</a>
+  <a class="rain" href="khanprogram.html">Watch Rain Animation!</a>
+  <br></br>
+  <img class="jjj" src="jjjpeg.jpg" height="200px" alt="J. Jonah Jameson">
+  <br></br>
+  <a class="jjj" href = "jjjending.html">Conclusion of J. Jonah Jameson story</a>
+  <h2 class="andlastly">And lastly...</h2>
+  <a class="andlastly" href="https://www.youtube.com/watch?v=uHgt8giw1LY">My honest thoughts of this school year</a>
+  <!-- yes this many line breaks is necesarry -->
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <h2 class="forreal">But for real,</h2>
+  <a class="forreal" href="honest.html">Actual honest thoughts</a>
   <!-- Jquery -->
   <script src=  "https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <!-- p5.js -->
   <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
   <!-- the real javascript stuff -->
   <script>
-    $("#rain-img").hide().slideDown();
-    $("a").hide().slideDown();
+    //hide elements
+    $(".rain").hide();
+    $(".jjj").hide()
+    $(".andlastly").hide()
+    $(".forreal").hide()
+
+    //slidedown for the rain animation
+    $(".rain").slideDown(500,function(){
+      //jjj ending slidedown after
+      $(".jjj").slideDown(500,function(){
+        //"and lastly" slidedown after
+        $(".andlastly").slideDown(500,function(){
+          $(".forreal").slideDown(500)
+        });
+      });
+    });
   </script>
 </body>
 </html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <title>J. Jonah Jameson Conclusion</title>
+    <style>
+        #news{
+            background-color: darkgray;
+            border-style:double;
+        }
+        #spidermanimg{
+            filter:grayscale();
+        }
+        img{
+            border-style:dashed;
+        }
+    </style>
+</head>
+<body>
+<div id="news">
+<h1>The Daily Bugle</h1>
+<h2>SPIDER-MAN ARRESTED AS PETER PARKER; CRIME LEVEL (UN)SURPRISINGLY STAYS THE SAME</h2>
+<img id="spidermanimg" src="download.jpg"></img>
+<p id="article">The local hero of New York City known as "Spider Man" has had his identity revealed as local photographer Peter Parker. He has been arrested with charges of Property Damage, Assault, and Vigilantism. Despite this, the NYPD Police Chief says "The police have been taking care of crime prefectly fine, and crime has not increaed since this development. Who would have guessed the police would do a better job than some kid in his 20s wearing a costume?" Daily Bugle editor-in-chief J. Jonah Jameson takes credit for this discovery, having said "I'm frankly appalled that my own photographer would be the one to stoop to such a low, however I have hired a much more trustworthy photographer by the name Miles Morales"
+</p>
+<h3>See also on pg. 3: Who is this new Spider-Man copycat roaming New York? See exclusive photos from Daily Bugle photographer Miles Morales</h3>
+</div>
+<a href="index.html">Back To Homepage</a>
+<!-- Jquery -->
+<script src=  "https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+    //slide down news
+    $("#news").hide().slideDown();
+</script>
+</body>
+</html>
