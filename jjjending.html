@@ -28,7 +28,11 @@
 <script src=  "https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script>
     //slide down news
-    $("#news").hide().slideDown();
+    $("#news").hide().fadeIn();
+    //click the image for a funny secret
+    $("#spidermanimg").on("click",function(){
+        $("#spidermanimg").slideUp().slideDown();
+    });
 </script>
 </body>
 </html>
